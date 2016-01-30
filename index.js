@@ -50,7 +50,7 @@ exports.extract = function(text, options){
   _.each(options.ngrams, function(ngram){
     var keywordsForNgram;
     var tf = new Tf();
-    var tokenized = _.map(natural.NGrams.ngrams(text, ngram), function(ngram){
+    var tokenized = _.map(natural.NGrams.ngrams(text.split(' '), ngram), function(ngram){
       if (options.stem){
         ngram = _.map(ngram, stem);
       }
