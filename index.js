@@ -29,7 +29,7 @@ exports.extract = function(text, options){
   };
 
   if (!text) return [];
-  if (typeof text !== 'string') text = text.toString();
+  //if (typeof text !== 'string') text = text.toString();
   
   if (!options) options = {};
   if (!options.ngrams){
