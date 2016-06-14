@@ -29,7 +29,7 @@ exports.extract = function(text, options){
   };
 
   if (!text) return [];
-  if (typeof text !== 'string') text = text.toString();
+  //if (typeof text !== 'string') text = text.toString();
   
   if (!options) options = {};
   if (!options.ngrams){
@@ -41,19 +41,21 @@ exports.extract = function(text, options){
   if (!options.min) options.min = 2; 
   if (!options.stopWords) options.stopWords = [];
   if (!options.startWords) options.startWords = [];
-  if (options.html){
-    text = stripTags(text);
-  }
+  //if (options.html){
+  //  text = stripTags(text);
+  //}
 
   // For each ngram, extract the most frequent phrases (taking into account
   // stop and start words lists)
   _.each(options.ngrams, function(ngram){
     var keywordsForNgram;
     var tf = new Tf();
-    var tokens = _.map(text.split(' '), function(token){ 
-      return token.trim(); 
-    });
-    var tokenized = _.map(natural.NGrams.ngrams(tokens, ngram), function(ngram){
+    //var tokens = _.map(text.split(' '), function(token){ 
+    //  return token.trim(); 
+    //});
+    
+    // Pass text in as array
+    var tokenized = _.map(natural.NGrams.ngrams(text, ngram), function(ngram){
       if (options.stem){
         ngram = _.map(ngram, stem);
       }
