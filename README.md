@@ -1,7 +1,9 @@
-Gramophone
+Gramophone 
 ==========
 
-Private edits. Mainly to allow you to pass in texts as arrays to avoid natural from tokenizing your text.
+Make package light weight.
+Remove requirement to use natural.
+Remove stream code.
 
 Licence & copyright
 -------------------
