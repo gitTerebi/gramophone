@@ -51,7 +51,7 @@ function ngrams(sequence, n, startSymbol, endSymbol) {
 
 function tokenize(s) {
   var results;
-  results = s.split(/[^A-Za-zА-Яа-я0-9_,']+/);
+  results = s.split(/[^A-Za-zА-Яа-я0-9_,&']+/);
   return _.without(results, '', ' ');
 };
 
