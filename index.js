@@ -60,9 +60,9 @@ exports.extract = function (text, options) {
     });
     tf.addDocument(tokenized);
     keywordsForNgram = tf.listMostFrequestTerms(0);
-    keywordsForNgram = _.select(keywordsForNgram, function (item) {
-      return usePhrase(item.term, options);
-    });
+    //keywordsForNgram = _.select(keywordsForNgram, function (item) {
+    //  return usePhrase(item.term, options);
+    //});
     results = results.concat(keywordsForNgram);
   });
 
